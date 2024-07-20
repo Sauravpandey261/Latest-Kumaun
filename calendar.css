@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto";
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    max-height: fit-content;
+    gap: 50px;
+}
+.left {
+    width: 300px;
+    height: 100%;
+    min-height: 80vh;
+    max-height: fit-content;
+}
+.right {
+    width: 50vw;
+    display: flex;
+    min-height: 80vh;
+    max-height: fit-content;
+    gap: 20px;
+}
+.right .event {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+.event h2:nth-child(1) {
+    margin-top: 300px;
+}
+.event p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: rgb(59, 58, 58);
+}
+.event h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+.left .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+.img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.calendar button {
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border: 2.5px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transition: all linear;
+    z-index: 2;
+    overflow: hidden;
+}
+button::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: all linear 0.3s;
+}
+button:hover::after {
+    transition: all linear 0.3s;
+    transform: translate(-50%,-50%) scale(3);
+}
+button:hover {
+    color: rgb(255, 255, 255);
+    transition: all linear 0.3s;
+    font-size: 18px;
+}
+button {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+button.active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+.left .calendar {
+    gap: 8px;
+}
+.page1{
+    display: flex;
+}
+.page1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+.maincontainer{
+    display: flex;
+
+}
+
+.nav{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 50px;
+    background-color: transparent;
+
+}
+.nav .middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+.middle a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: "poppins";
+    text-transform: uppercase;
+}
+.logo{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "poppins";
+
+}
+.page2{
+    width: 100%;
+    height: 100vh;
+    background-color: royalblue;
+    background-color: rgba(79, 174, 128, 0.513);
+
+}
+.mainnav{
+    position: fixed;
+    top: 0;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    font-family: "poppins";
+
+}
+.maindropdownmenu{
+    width: 100%;
+    background-color:rgba(79, 174, 128, 0.513);
+    color: white;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    
+}
+.maindropdownmenu a{
+    font-family: "poppins";
+    text-decoration: none;
+    color: black;
+}
+
+.dropdownmenu {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdownmenu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.dropdownmenu a:hover {
+    background-color: #ddd;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdownmenu:hover .dropdown-content {
+    display: block;
+}
+.page1{
+    position: relative;
+}
+.mainnav{
+    position: fixed;
+    top: 0;
+    left: 0;
+}

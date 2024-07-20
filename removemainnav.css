@@ -1,0 +1,23 @@
+.page1{
+    width: 100%;
+    max-height: fit-content;
+    background-color:rgba(219, 219, 219, 0.479);
+    padding: 70px 0px 0 0px;
+}
+.mainnav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+
+  }
+  .maindropdownmenu{
+      display: none;
+  }
+  .nav{
+      height: 100%;
+  }

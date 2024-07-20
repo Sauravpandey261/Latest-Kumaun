@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="./sidebar.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        .nav{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:0 50px;
+        }
+        .nav .middle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            
+        }
+        .middle a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-family: "Roboto";
+            text-transform: uppercase;
+        }
+        .logo{
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        .mainnav{
+            position: fixed;
+            top: 0;
+            z-index: 101;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            
+        }
+        
+        .maindropdownmenu{
+            width: 100%;
+            background-color: #e7e7e7bb;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            gap: 35px;
+        }
+        .maindropdownmenu a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .dropdownmenu {
+            position: relative;
+            display: inline-block;
+            
+        }
+        
+        .dropdownmenu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+            
+        }
+        
+        .dropdownmenu a:hover {
+            background-color: #ddd;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        
+        .dropdownmenu:hover .dropdown-content {
+            display: block;
+        }
+        .logo a{
+            text-decoration: none;
+            color: black;
+        }
+        .page1{
+            width: 100%;
+            
+            max-height: fit-content;
+            background-color:rgba(219, 219, 219, 0.479);
+            padding: 90px 0px 0 0px;
+
+
+        }
+        .imagecontainer{
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        .imagecontainer img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .imagecontainer .overlay1{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.13);
+        }
+        .overlay1 h1{
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            width: fit-content;
+            padding: 40px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            font-size: 40px;
+            color: rgba(2, 63, 34, 0.671);
+            text-transform: uppercase;
+            box-shadow: 10px 10px 0px black;
+            border-radius: 10px;
+        }
+
+
+
+        .page2{
+            height: fit-content;
+            
+        }
+        .page2{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mousecursor{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color:rgba(0, 0, 0, 0.677);
+            position: fixed;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            font-size: 5px;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        .infocontainer{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+
+        }
+        .infocontainer .about{
+            width: 100%;
+            height: fit-content;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px;
+        }
+        .about .aboutimg{
+            width:80%;
+            height:400px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right bottom, rgb(197, 211, 121),black,white);
+            padding: 10px;
+            border-radius: 10px;
+            
+        }
+        .aboutimg img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        .about .content{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+        }
+        .content h2{
+            font-size: 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            display: inline;
+            text-align: center;
+            text-decoration: underline;
+            letter-spacing: 2px;
+        }
+        .content p{
+            font-size: 20px;
+        }
+        .content h3{
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            width: fit-content;
+          
+        }
+        #menuicon{
+            display: none;
+        }
+        p span{
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .infocontainer h1{
+            text-align: justify;
+            font-size: 30px;
+            width: 95%;
+            font-weight: 500;
+            font-family: monospace;
+            margin-bottom: 60px;
+            margin-top: 50px;
+            background: linear-gradient(to right bottom, rgb(197, 211, 121),black,black);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        
+
+        @media (max-width:1000px) {
+            .maindropdownmenu{
+                width: 100%;
+                background-color: #ffffffbb;
+                height: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 20px 30px;
+
+                
+            }
+            .maindropdownmenu a{
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+            }
+         
+            .overlay1 h1{
+                padding: 20px;
+                font-size: 30px;
+            }
+            .imagecontainer{
+                height: 400px;
+            }
+            .infocontainer h1{
+                font-size: 25px;             
+            }
+        }
+        @media (max-width:770px) {
+            .nav{
+
+                padding:0 20px;
+                background-color: white;
+    
+            }
+            .nav .middle{
+                gap: 40px;
+    
+            }
+            #menuicon{
+                display: block;
+                color: black;
+                font-size: 22px;
+            }
+            .middle a{
+                display: none;
+            }
+            .logo{
+                font-size: 25px;
+                text-transform: uppercase;
+            }
+            .mainnav{
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 90px;
+            }
+            .maindropdownmenu{
+                width: 100%;
+                background-color: #ffffffbb;
+                height: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 20px 30px;
+            }
+            .maindropdownmenu::-webkit-scrollbar{
+                display: none;
+            }
+            #menuicon{
+                display: block;
+
+            }
+            
+            .maindropdownmenu a{
+                text-decoration: none;
+                color: black;
+            }
+       
+
+            .logo a{
+                text-decoration: none;
+            }
+            .mousecursor{
+               display: none;
+            }
+            .imagecontainer{
+                height: 300px;
+            }
+
+            .infocontainer{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5vw;
+                padding: 10px;
+    
+            }
+            .infocontainer .about{
+                width: 100%;
+                height: fit-content;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 3vw;
+                padding: 10px;
+            }
+            .about .aboutimg{
+                width:90%;
+                height:30vw;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .aboutimg img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+            }
+            .about .content{
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                height: 100%;
+            }
+            .content h2{
+                font-size: 4vw;
+                margin-bottom: 2vw;
+                margin-top: -1vw;
+                text-align: center;
+                width: 100%;
+                border-bottom: 0.4vw solid rgba(0, 0, 0, 0.836);
+            }
+            .content p{
+                font-size: 2.4vw;
+                text-align: justify;
+            }
+            .content h2{
+                text-decoration: none;
+            }
+            .infocontainer h1{
+                font-size: 20px;    
+                width: 95%;          
+                padding: 15px;        
+            }
+            
+        }
+        @media (max-width:400px) {
+            .overlay1 h1{
+                padding: 5vw;
+                height: 20vw;
+                font-size:8vw;
+
+            }
+            .content p{
+                font-size: 2.4vw;
+            }
+            .infocontainer h1{
+                font-size: 14px;   
+                width: 100%;          
+                padding: 15px;
+            }
+        }
+        @media (max-width:1000px) {
+            .maindropdownmenu{
+                width: 100%;
+                background-color: #ffffffbb;
+                height: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 20px 30px;
+
+                
+            }
+            .maindropdownmenu a{
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+            }
+         
+            .overlay1 h1{
+                padding: 20px;
+                font-size: 30px;
+            }
+            .imagecontainer{
+                height: 400px;
+            }
+        }
+        @media (max-width:770px) {
+            .nav{
+
+                padding:0 20px;
+                background-color: white;
+    
+            }
+            .nav .middle{
+                gap: 40px;
+    
+            }
+            #menuicon{
+                display: block;
+                color: black;
+                font-size: 22px;
+            }
+            .middle a{
+                display: none;
+            }
+            .logo{
+                font-size: 25px;
+                text-transform: uppercase;
+            }
+            .mainnav{
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 90px;
+            }
+            .maindropdownmenu{
+                width: 100%;
+                background-color: #ffffffbb;
+                height: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 20px 30px;
+            }
+            .maindropdownmenu::-webkit-scrollbar{
+                display: none;
+            }
+            #menuicon{
+                display: block;
+
+            }
+            
+            .maindropdownmenu a{
+                text-decoration: none;
+                color: black;
+            }
+       
+
+            .logo a{
+                text-decoration: none;
+            }
+            .mousecursor{
+               display: none;
+            }
+            .imagecontainer{
+                height: 300px;
+            }
+
+            .infocontainer{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5vw;
+                padding: 10px;
+    
+            }
+            .infocontainer .about{
+                width: 100%;
+                height: fit-content;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 3vw;
+                padding: 10px;
+            }
+            .about .aboutimg{
+                width:90%;
+                height:30vw;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .aboutimg img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+            }
+            .about .content{
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                height: 100%;
+            }
+            .content h2{
+                font-size: 4vw;
+                margin-bottom: 2vw;
+                margin-top: -1vw;
+                text-align: center;
+                width: 100%;
+                border-bottom: 0.4vw solid rgba(0, 0, 0, 0.836);
+            }
+            .content p{
+                font-size: 2.4vw;
+                text-align: justify;
+            }
+            .page1{
+                width: 100%;
+                max-height: fit-content;
+                background-color:rgba(219, 219, 219, 0.479);
+                padding: 70px 0px 0 0px;
+    
+    
+            }
+            .mainnav {
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 70px;
+            
+              }
+              .maindropdownmenu{
+                  display: none;
+              }
+              .nav{
+                  height: 100%;
+              }
+
+        }
+        @media (max-width:400px) {
+            .overlay1 h1{
+                padding: 5vw;
+                height: 20vw;
+                font-size:8vw;
+
+            }
+            .content p{
+                font-size: 2.4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="mousecursor"></div>
+        <div class="sidebar">
+            <div class="closeicon">
+              <i class="ri-close-line"></i>
+            </div>
+            <div class="sidebarlinks1">
+              <a href="./index.html"><i class="ri-home-2-line"></i> Home </a>
+              <a href=""><i class="ri-gallery-view-2"></i>Gallery</a>
+              <a href=""><i class="ri-phone-fill"></i>Contact</a>
+            </div>
+            <div class="sidebardropdown">
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="./index.html">Kumaun</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="./himalayas.html">Himalayas</a>
+                  <a href="#">History</a>
+                  <a href="./topography.html">Topography</a>
+                  <a href="#">Flora & Fauna</a>
+                  <a href="./culture.html">Culture & Heritage</a>
+                  <a href="./fest_fairs.html">Fairs & Fests</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="">About</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="#">Mission</a>
+                  <a href="#">Message</a>
+                  <a href="./ourteam.html">Our Team</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="./destination.html">Destinations</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="./popular destination.html">Popular</a>
+                  <a href="#">Nature</a>
+                  <a href="./adventure.html">Adventure</a>
+                  <a href="./culture.html">Culture & Heritage</a>
+                  <a href="./spiritual.html">Spiritual</a>
+                  <a href="#">Seasonal</a>
+                  <a href="#">Unexplored</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="./fest_fairs.html">Events</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="./testimonials.html">Testimonials</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="#">Bookings</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+              <div class="sideabout">
+                <div class="sideaboutdiv">
+                  <a href="#">Archives</a>
+                  <i class="ri-arrow-down-s-fill"></i>
+                </div>
+                <div class="sideaboutdropdown">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <nav>
+            <div class="mainnav">
+            <div class="nav">
+                <div class="logo"><a href="./index.html">Logo</a></div>
+                <div class="middle">
+                    <a href="./index.html">Home</a>
+                    <a href="">Gallery</a>
+                    <a href="">Contact</a>
+                    <a id="menuicon" href="#"><i class="ri-menu-3-line"></i></a>
+
+                </div>
+            </div>
+            <div class="maindropdownmenu">
+                <div class="dropdownmenu">
+                    <a href="./index.html">Kumaoun <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="dropdown-content">
+                        <a href="./himalayas.html">Himalayas</a>
+                        <a href="#">History</a>
+                        <a href="./topography.html">Topography</a>
+                        <a href="#">Flora & Fauna</a>
+                        <a href="./culture.html">Culture & Heritage</a>
+                        <a href="./fest_fairs.html">Fairs & Fests</a>
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a  href="#">About US <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Mission</a>
+                        <a href="#">Massege</a>
+                        <a href="./ourteam.html">Our Team</a>
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a href="./destination.html">Destinations <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="dropdown-content">
+                        <a href="./popular destination.html">Popular</a>
+                        <a href="#">Nature</a>
+                        <a href="./adventure.html">Adventure</a>
+                        <a href="./culture.html">Culture & Heritage</a>
+                        <a href="./spiritual.html">Spiritual</a>
+                        <a href="#">Seasonal</a>
+                        <a href="#">Unexplored</a>
+
+
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a href="./fest_fairs.html">Events</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a href="./testimonials.html">Testimonials</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a href="">Bookings</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="dropdownmenu">
+                    <a href="">Archives</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+        <div class="page1">
+          <div class="imagecontainer">
+            <img src="./image/topography_3.jpg" alt="">
+            <div class="overlay1">
+                <h1>Topography</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="page2">
+            <div class="infocontainer">
+                <h1>Kumaon, an attractive region in Uttarakhand, India, boasts a diverse array of geographical features, such as towering mountains, deep valleys, tranquil lakes, and meandering rivers. The region's distinctive appeal is a result of the combination of lush landscapes and rugged terrains that make up Kumaon's topography.
+                </h1>
+                <div class="about">
+                    <div class="aboutimg"><img src="./image/mountain_ranges.jpg" alt="">
+                    </div>
+                     <div class="content">
+                        <h2> Mountain Ranges</h2>
+
+                        <h3>Greater Himalayas (Himadri)</h3>
+                        <p><span>Nanda Devi -</span> Nanda Devi is the second highest peak in India and a UNESCO World Heritage Site, standing at 7,816 meters. The Nanda Devi National Park that surrounds it is world-renowned for its biodiversity. 
+                        </p>
+                        <br>
+                        <p><span>Trishul -</span>  Trishul is a trident-shaped mountain that consists of three summits, with the highest peak standing at 7,120 meters. It is a well-liked destination for mountaineers.
+                        </p>
+
+                        <h3>Lesser Himalayas (Himachal)</h3>
+                        <p><span>Shivalik Hills -</span>  The Shivalik range is a portion of the southern foothills of the Himalayas. The transition from the plains to the higher mountains is marked by the forested slopes and undulating terrain of these hills. 
+                        </p>
+                    
+                    </div>
+               
+            </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/pithoragarh_valley.jpg" alt="">
+                </div>
+                 <div class="content">
+                    <h2> Valleys</h2>
+                    <p><span>Almora Valley -</span>  The Almora Valley, which is situated between the Kosi and Suyal rivers, is renowned for its picturesque vistas and fertile land. Almora, which is situated in this region, functions as both an administrative and cultural hub. 
+                    </p>
+                    <br>
+                    <p><span> Pithoragarh Valley -</span>  This valley, which is frequently referred to as "Little Kashmir," is encircled by towering peaks and serves as a gateway to a variety of trekking routes, including those that lead to the Lipulekh Pass and the Milam Glacier.
+                    </p>
+                </div>
+           
+        </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/Lakes banner_3psd (1).jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Lakes</h2>
+                    <p><span>Naini Lake -</span> Naini Lake is a pear-shaped lake that is encircled by hills and is located in Nainital. It is a significant tourist destination that provides scenic views, fishing, and watercraft. 
+                    </p>
+                    <br>
+                    <p><span>Bhimtal -</span> Boasting a small island at its center, Bhimtal is significantly larger than Naini Lake. The lake is enveloped by a verdant landscape and provides a tranquil respite. 3. Sattal- Sattal is a collection of seven interconnected freshwater waters. It is a sanctuary for migratory species and provides a tranquil atmosphere for tourists. 
+                    </p>
+                    <br>
+                </div>
+        </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/kosi_river.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Watercourses</h2>
+                    <p><span>Kali (Sharda) River -</span> The Kali River serves as a natural frontier with Nepal, defining the eastern boundary of Kumaon. It is indispensable for irrigation and ensures the sustainability of local agriculture. 
+                    </p>
+                    <br>
+                    <p><span>Ramganga River -</span> The Ramganga River, which flows through Jim Corbett National Park, is a lifeline for the park's ecosystem and supports a variety of wildlife.
+                    </p>
+                    <br>
+                    <p><span>Kosi River -</span> The Kosi River, which originates from the Pindari Glacier, is essential for the agricultural sector in the region. It traverses valleys and gorges, fostering a diverse array of flora and fauna. 
+                    </p>
+        
+                </div>
+            </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/jim_corbet.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Wildlife Refuges and forests</h2>
+                    <p><span>Jim Corbett National Park -</span> This park, situated in the foothills, is renowned for its diverse wildlife, which includes tigers, elephants, and more than 600 avian species. It is a key tourist destination and the earliest national park in India. 
+                        Binsar Wildlife Sanctuary - Binsar, which is situated at an altitude of approximately 2,400 meters, provides breathtaking vistas of the Himalayas. Leopards, barking deer, and a diverse array of bird species inhabit the area.                         
+                    </p>
+                </div>
+            </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/pindari_glacier.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Glaciers</h2>
+                    <p><span>Pindari Glacier -</span> A popular trekking destination, Pindari is one of the most accessible glaciers in the region. The glacier and the neighboring peaks are the subject of breathtaking views during the trek. Milam Glacier- The Gori Ganga River is supplied by Milam Glacier, which is situated in the Munsiyari region. The journey to the glacier is strenuous, but it provides awe-inspiring vistas and a glance into the high-altitude landscapes.                       
+                    </p>
+                </div>
+            </div>
+            <div class="about">
+                <div class="aboutimg"><img src="./image/ranikhet.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Soil and Terrain</h2>
+                    <p><span>Terraced Farming -</span> The hilly terrain of Kumaon has resulted in the development of terraced farming, which involves the carving of steps into the slopes to create level areas for cultivation. This approach is effective in preventing soil erosion and optimizing the utilization of available land.                         
+                    </p>
+                    <br>
+                    <p><span>Soil types -</span> The soil in Kumaon is diverse, ranging from alluvial soil in the river basins to sandy and loamy soil in the hills. Diverse crops and horticulture, such as rice, wheat, millet, apples, and plums, are supported by these soil varieties. In conclusion, Kumaon's topography is a harmonious combination of tranquil lakes, verdant valleys, lofty mountains, and meandering rivers. Each element of this landscape contributes to the distinctive cultural and ecological heritage of the region. It is a paradise for nature enthusiasts, trekkers, and tourists due to the diverse flora and fauna that are supported by the varied terrain. Kumaon's topography is both crucial to the way of life of its inhabitants and breathtaking, spanning from the majestic peaks of the Greater Himalayas to the serene lakes of the Lesser Himalayas and the fertile valleys in between..                         
+                    </p>
+                </div>
+            </div>
+            </div>
+            
+      </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./sidebar.js"></script>
+    <script>
+        var main=document.querySelector(".main")
+var cursor= document.querySelector(".mousecursor")
+var imageDivs = document.querySelectorAll(".aboutimgcont")
+
+        gsap.to(".middle a",{
+            color:"black",
+            duration:0.5,
+            scrollTrigger:{
+                trigger:".nav",
+                scroller:"body",
+                start:"top -10%",
+                end:"top -9%",
+                scrub:1
+            }
+        })
+        gsap.to(".maindropdownmenu",{
+            backgroundColor: "rgba(79, 174, 128, 0.513)",
+            color:"white",
+            duration:0.5,
+            scrollTrigger:{
+                trigger:".maindropdownmenu",
+                scroller:"body",
+                start:"top -5%",
+                end:"top -9%",
+                scrub:1
+            }
+        })
+
+        
+main.addEventListener("mousemove",function(dets){
+    gsap.to(cursor,{
+        x:dets.x,
+        y:dets.y,
+        ease:"power2.",
+        duration:0.5
+    })
+})
+
+imageDivs.forEach(function(imageDiv) {
+    imageDiv.addEventListener("mouseenter", function() {
+        cursor.innerHTML = "View More";
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "#ffffffA5",
+            color: "#333",
+            ease:"power1.out",
+            duration:0.5
+        });
+        gsap.to(imageDiv.querySelector("img"), {
+            scale: 1.2,
+            ease: "power1.out",
+            duration: 0.5
+        });
+    });
+
+imageDiv.addEventListener("mouseleave",function(){
+    cursor.innerHTML=""
+    gsap.to(cursor, {
+        scale: 1,
+        backgroundColor:"rgba(0, 0, 0, 0.677)",
+        ease: "power2.out",
+        duration: 0.3
+    });
+    gsap.to(imageDiv.querySelector("img"), {
+        scale: 1,
+        ease: "power2.out",
+        duration: 0.5
+    });
+ })
+});
+
+var stopRunDropdown = function() {
+    if(window.innerWidth >= 770) {
+        gsap.to(".mainnav", {
+            backgroundColor: "white",
+            color: "black",
+            duration: 0.5,
+            height: "110px",
+            scrollTrigger: {
+                trigger: ".nav",
+                scroller: "body",
+                start: "top -10%",
+                end: "top -9%",
+                scrub: 1
+            }
+        });
+    } else {
+        gsap.to(".mainnav", {
+            backgroundColor: "white",
+            color: "black",
+            duration: 0.5,
+            height: "80px",
+            scrollTrigger: {
+                trigger: ".nav",
+                scroller: "body",
+                start: "top -10%",
+                end: "top -9%",
+                scrub: 1
+            }
+        });
+    }
+};
+
+// Call the function initially
+stopRunDropdown();
+
+// Add event listener for window resize
+window.addEventListener('resize', stopRunDropdown);
+
+
+        
+    </script>
+</body>
+</html>

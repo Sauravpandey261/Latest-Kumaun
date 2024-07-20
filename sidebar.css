@@ -1,0 +1,218 @@
+ .sidebar {
+        font-family: roboto;
+        letter-spacing: 1px;
+        width: 400px;
+        position: fixed;
+        background-color: #f5f5f5;
+        height: 80%;
+        z-index: 1001;
+        right: -400px;
+        top: 0px;
+        overflow-y: auto;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        display: none;
+      }
+      .sidebar::-webkit-scrollbar {
+        width: 10px;
+        background-color: black;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: rgb(255, 255, 255);
+        border-radius: 100%;
+      }
+      .sidebar i {
+        font-size: 35px;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 10px 0;
+      }
+      .sidebarlinks1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+        font-size: 18px;
+        margin-top: 80px;
+      }
+      .sidebarlinks1 a:hover {
+        background-color: rgba(21, 167, 97, 0.789);
+        color: white;
+      }
+      .sidebarlinks1 a {
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        color: black;
+      }
+      .sidebardropdown {
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .sideaboutdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        color: black;
+        padding-right: 15px;
+      }
+      .sideaboutdiv:hover {
+        background-color: rgba(21, 167, 97, 0.789);
+      }
+      .sideaboutdiv:hover i {
+        color: white;
+      }
+      .sideaboutdiv i {
+        font-size: 25px;
+      }
+      .sideaboutdiv a {
+        color: black;
+      }
+      .sideaboutdiv:hover a {
+        color: white;
+      }
+      .sideaboutdiv i {
+        transition: all ease 0.5s;
+      }
+      .sideabout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .sideaboutdropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 10px;
+        display: none;
+      }
+      .sideaboutdropdown a {
+        text-decoration: none;
+        width: 80%;
+        padding: 15px 40px;
+        font-size: 17px;
+        color: rgb(26, 51, 25);
+      }
+      .sideaboutdropdown a:hover {
+        background-color: rgba(21, 167, 97, 0.789);
+        color: white;
+        border-radius: 5px;
+      }
+      .sideaboutdiv > a {
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+        display: flex;
+      }
+      .closeicon {
+        padding: 10px;
+        position: sticky;
+        top: 10px;
+        float: right;
+        height: 60px;
+        width: 60px;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgba(21, 167, 97, 0.789);
+        border-radius: 50%;
+      }
+      .closeicon:hover{
+        background-color: rgb(12, 147, 82);
+        scale: 1.1;
+
+      }
+      .closeicon i {
+        font-size: 35px;
+      }
+      .sidebarlinks1 a {
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        background-color: #dadada;
+      }
+      .sidebarlinks1 i {
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+      }
+      .sidebarlinks1 a:hover i {
+        color: white;
+      }
+      @media (max-width: 770px){
+        .sidebar{
+          display: block;
+        }
+      }
+      @media (max-width: 450px) {
+        .sidebar {
+          width: 100%;
+          height: 60%;
+          right: -100%;
+
+        }
+        .sidebar i {
+          font-size: 18px;
+          padding: 10px 0;
+          font-weight: 500;
+        }
+        .sidebarlinks1 {
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .sidebarlinks1 a {
+          padding: 5px 15px;
+        }
+        .sidebarlinks1 i {
+          font-size: 20px;
+        }
+        .sidebardropdown {
+          width: 100%;
+          margin-top: 30px;
+          border-radius: 10px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .sideaboutdiv:hover {
+          background-color: rgba(21, 167, 97, 0.789);
+        }
+        .sideaboutdropdown a {
+          text-decoration: none;
+          width: 80%;
+          padding: 15px 10px 15px 40px;
+        }
+        .closeicon {
+          height: 50px;
+          width: 50px;
+        }
+        .closeicon:hover{
+            background-color: rgb(12, 147, 82);
+          }
+        .closeicon i {
+          font-size: 35px;
+        }
+      }
